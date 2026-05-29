@@ -17,7 +17,6 @@ class RegexHighlighterTest {
     highlighter = new RegexHighlighter();
   }
 
-
   @Test
   void leerstring_gibLeereListe() {
     assertTrue(highlighter.computeRegions("").isEmpty());
@@ -35,13 +34,11 @@ class RegexHighlighterTest {
     assertEquals(MiniJavaColours.KEYWORD_COLOUR, r.get(0).colour());
   }
 
-
   @Test
   void aufeinanderfolgendeRegionen_beideBehalten() {
     List<HighlightRegion> r = highlighter.computeRegions("return null;");
     assertEquals(2, r.size());
   }
-
 
   @Test
   void keywordInZeilenkommentar_kommentarGewinnt() {
@@ -70,7 +67,6 @@ class RegexHighlighterTest {
     assertEquals(1, r.size());
     assertEquals(MiniJavaColours.STRING_LITERAL_COLOUR, r.get(0).colour());
   }
-
 
   @Test
   void keineUeberlappungenInAusgabe() {
